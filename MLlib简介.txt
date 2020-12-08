@@ -1,0 +1,22 @@
+MLlib支持较多的数据格式（RDD以及部署在集群中的向量和矩阵）
+
+支持数据集格式分类：
+	（1）本地向量集，向Spark提供可操作的数据集合
+	（2）向量标签，对不同数据集合分类
+	（3）本地矩阵，数据以矩阵形式存储在本地计算机中
+	（4）分布式矩阵，数据以矩阵形式存储在分布式计算机中
+本地矩阵： import org.apache.spark.mllib.linalg.{Matrix, Matrices}
+使用方法：val mx = Matrices.dense(2, 3, Array())
+分布式矩阵分类：行矩阵、带有索引的行矩阵、坐标矩阵
+行矩阵：对每一行的向量进行单独计算
+带有索引的行矩阵：能够对每一行的数据进行显示
+坐标矩阵：一般用于数据比较分散的情况，矩阵含0比较多或者是含较多的某个具体值
+
+数理统计的基本概念（statistics）
+基本统计量分类：
+	（1）colStats：以列为基础计算统计量
+	（2）chiSqTest：对数据集内的数据计算皮尔逊距离
+	（3）corr：两个数据集计算相关系数
+colStats：count Max Mean normL1 normL2 numNonzeros variance
+
+
